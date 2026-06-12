@@ -3,10 +3,7 @@
 
 class MenuView : public IMenuView {
 public:
-    int  selectRole()                        override;
-    int  getMenuChoice()                     override;
-    void showCustomerMenu()                  override;
-    void showOrderManagerMenu()              override;
-    void showProductionManagerMenu()         override;
-    void showMessage(const std::string& msg) override;
+    void showMainMenu(const MenuStats& stats) override;
+    int  getMenuChoice()                      override;
+    void showMessage(const std::string& msg)  override;
 };

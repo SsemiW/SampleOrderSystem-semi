@@ -49,7 +49,8 @@ int main(int argc, char** argv) {
     ShipmentController   shipCtrl(orderModel, shipmentView);
     MonitorController    monitorCtrl(orderModel, sampleModel, monitorView);
 
-    AppController app(sampleCtrl, orderCtrl, prodCtrl, shipCtrl, monitorCtrl, menuView);
+    AppController app(sampleCtrl, orderCtrl, prodCtrl, shipCtrl, monitorCtrl, menuView,
+                      sampleModel, orderModel);
     app.run();
     return 0;
 #endif

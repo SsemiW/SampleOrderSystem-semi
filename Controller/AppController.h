@@ -5,6 +5,8 @@
 #include "IShipmentController.h"
 #include "IMonitorController.h"
 #include "../View/IMenuView.h"
+#include "../Model/ISampleModel.h"
+#include "../Model/IOrderModel.h"
 
 class AppController {
 public:
@@ -13,13 +15,13 @@ public:
                   IProductionController& production,
                   IShipmentController&   shipment,
                   IMonitorController&    monitor,
-                  IMenuView&             view);
+                  IMenuView&             view,
+                  ISampleModel&          sampleModel,
+                  IOrderModel&           orderModel);
     void run();
 
 private:
-    void runCustomer();
-    void runOrderManager();
-    void runProductionManager();
+    MenuStats computeStats() const;
 
     ISampleController&     sample_;
     IOrderController&      order_;
@@ -27,4 +29,6 @@ private:
     IShipmentController&   shipment_;
     IMonitorController&    monitor_;
     IMenuView&             view_;
+    ISampleModel&          sampleModel_;
+    IOrderModel&           orderModel_;
 };
