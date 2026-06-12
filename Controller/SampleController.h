@@ -1,11 +1,12 @@
 #pragma once
+#include "ISampleController.h"
 #include "../Model/ISampleModel.h"
 #include "../View/ISampleView.h"
 
-class SampleController {
+class SampleController : public ISampleController {
 public:
     SampleController(ISampleModel& model, ISampleView& view);
-    void run();
+    void run() override;
 
 private:
     void handleRegister();

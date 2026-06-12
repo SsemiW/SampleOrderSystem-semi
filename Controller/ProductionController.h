@@ -1,16 +1,17 @@
 #pragma once
+#include "IProductionController.h"
 #include "../Model/IProductionModel.h"
 #include "../Model/IOrderModel.h"
 #include "../Model/ISampleModel.h"
 #include "../View/IProductionView.h"
 
-class ProductionController {
+class ProductionController : public IProductionController {
 public:
     ProductionController(IProductionModel& prodModel,
                          IOrderModel&      orderModel,
                          ISampleModel&     sampleModel,
                          IProductionView&  view);
-    void run();
+    void run() override;
 
 private:
     IProductionModel& prodModel_;

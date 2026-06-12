@@ -30,6 +30,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Controller\AppController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
     <ClCompile Include="Controller\MonitorController.cpp">
       <Filter>Controller</Filter>
     </ClCompile>
@@ -56,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="Model\SampleModel.cpp">
       <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="View\MenuView.cpp">
+      <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="View\MonitorView.cpp">
       <Filter>View</Filter>
@@ -108,6 +114,24 @@
     <ClInclude Include="Repository\JsonRepository.h">
       <Filter>Repository</Filter>
     </ClInclude>
+    <ClInclude Include="Controller\AppController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\IMonitorController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\IOrderController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\IProductionController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\ISampleController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\IShipmentController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
     <ClInclude Include="Controller\MonitorController.h">
       <Filter>Controller</Filter>
     </ClInclude>
@@ -118,6 +142,9 @@
       <Filter>Controller</Filter>
     </ClInclude>
     <ClInclude Include="Controller\SampleController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\ShipmentController.h">
       <Filter>Controller</Filter>
     </ClInclude>
     <ClInclude Include="Model\IOrderModel.h">
@@ -144,6 +171,9 @@
     <ClInclude Include="Model\ProductionJob.h">
       <Filter>Model</Filter>
     </ClInclude>
+    <ClInclude Include="View\IMenuView.h">
+      <Filter>View</Filter>
+    </ClInclude>
     <ClInclude Include="View\IMonitorView.h">
       <Filter>View</Filter>
     </ClInclude>
@@ -154,6 +184,9 @@
       <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="View\ISampleView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="View\MenuView.h">
       <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="View\MonitorView.h">

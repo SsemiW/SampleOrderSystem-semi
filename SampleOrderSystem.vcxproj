@@ -135,6 +135,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Controller\AppController.cpp" />
     <ClCompile Include="Controller\MonitorController.cpp" />
     <ClCompile Include="Controller\OrderController.cpp" />
     <ClCompile Include="Controller\ProductionController.cpp" />
@@ -145,6 +146,7 @@
     <ClCompile Include="Model\OrderModel.cpp" />
     <ClCompile Include="Model\ProductionModel.cpp" />
     <ClCompile Include="Model\SampleModel.cpp" />
+    <ClCompile Include="View\MenuView.cpp" />
     <ClCompile Include="View\MonitorView.cpp" />
     <ClCompile Include="View\OrderView.cpp" />
     <ClCompile Include="View\ProductionView.cpp" />
@@ -178,6 +180,12 @@
     <ClInclude Include="Core\JsonParser.h" />
     <ClInclude Include="Core\JsonSerializer.h" />
     <ClInclude Include="Core\JsonValue.h" />
+    <ClInclude Include="Controller\AppController.h" />
+    <ClInclude Include="Controller\IMonitorController.h" />
+    <ClInclude Include="Controller\IOrderController.h" />
+    <ClInclude Include="Controller\IProductionController.h" />
+    <ClInclude Include="Controller\ISampleController.h" />
+    <ClInclude Include="Controller\IShipmentController.h" />
     <ClInclude Include="Controller\MonitorController.h" />
     <ClInclude Include="Controller\OrderController.h" />
     <ClInclude Include="Controller\ProductionController.h" />
@@ -193,11 +201,13 @@
     <ClInclude Include="Model\SampleModel.h" />
     <ClInclude Include="Repository\JsonRepository.h" />
     <ClInclude Include="Repository\IRepository.h" />
+    <ClInclude Include="View\IMenuView.h" />
     <ClInclude Include="View\IMonitorView.h" />
     <ClInclude Include="View\IOrderView.h" />
     <ClInclude Include="View\IProductionView.h" />
     <ClInclude Include="View\ISampleView.h" />
     <ClInclude Include="View\IShipmentView.h" />
+    <ClInclude Include="View\MenuView.h" />
     <ClInclude Include="View\MonitorView.h" />
     <ClInclude Include="View\OrderView.h" />
     <ClInclude Include="View\ProductionView.h" />
