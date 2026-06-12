@@ -30,6 +30,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Controller\OrderController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
     <ClCompile Include="Controller\SampleController.cpp">
       <Filter>Controller</Filter>
     </ClCompile>
@@ -39,13 +42,22 @@
     <ClCompile Include="Core\JsonSerializer.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="Model\OrderModel.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
     <ClCompile Include="Model\SampleModel.cpp">
       <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="View\OrderView.cpp">
+      <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="View\SampleView.cpp">
       <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="Test\CoreTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test\OrderTest.cpp">
       <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\RepositoryTest.cpp">
@@ -75,8 +87,17 @@
     <ClInclude Include="Repository\JsonRepository.h">
       <Filter>Repository</Filter>
     </ClInclude>
+    <ClInclude Include="Controller\OrderController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
     <ClInclude Include="Controller\SampleController.h">
       <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\IOrderModel.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\IProductionModel.h">
+      <Filter>Model</Filter>
     </ClInclude>
     <ClInclude Include="Model\ISampleModel.h">
       <Filter>Model</Filter>
@@ -93,7 +114,13 @@
     <ClInclude Include="Model\ProductionJob.h">
       <Filter>Model</Filter>
     </ClInclude>
+    <ClInclude Include="View\IOrderView.h">
+      <Filter>View</Filter>
+    </ClInclude>
     <ClInclude Include="View\ISampleView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="View\OrderView.h">
       <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="View\SampleView.h">
