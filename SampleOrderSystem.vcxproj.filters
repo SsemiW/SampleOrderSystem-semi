@@ -1,20 +1,61 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Core">
+      <UniqueIdentifier>{A1B2C3D4-0001-0000-0000-000000000001}</UniqueIdentifier>
+      <Extensions>cpp;h</Extensions>
     </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Repository">
+      <UniqueIdentifier>{A1B2C3D4-0002-0000-0000-000000000002}</UniqueIdentifier>
+      <Extensions>h</Extensions>
     </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Model">
+      <UniqueIdentifier>{A1B2C3D4-0003-0000-0000-000000000003}</UniqueIdentifier>
+      <Extensions>cpp;h</Extensions>
+    </Filter>
+    <Filter Include="View">
+      <UniqueIdentifier>{A1B2C3D4-0004-0000-0000-000000000004}</UniqueIdentifier>
+      <Extensions>cpp;h</Extensions>
+    </Filter>
+    <Filter Include="Controller">
+      <UniqueIdentifier>{A1B2C3D4-0005-0000-0000-000000000005}</UniqueIdentifier>
+      <Extensions>cpp;h</Extensions>
+    </Filter>
+    <Filter Include="Test">
+      <UniqueIdentifier>{A1B2C3D4-0006-0000-0000-000000000006}</UniqueIdentifier>
+      <Extensions>cpp;h</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\JsonParser.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\JsonSerializer.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Test\CoreTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\JsonValue.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\JsonParser.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\JsonSerializer.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ConsoleHelper.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Repository\IRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
