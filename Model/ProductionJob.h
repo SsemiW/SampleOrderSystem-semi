@@ -7,9 +7,9 @@ struct ProductionJob {
     int64_t     id{ 0 };                  // 저장소 기본 키 (auto-assign)
     int64_t     orderId{ 0 };
     int64_t     sampleId{ 0 };
-    int         requiredAmount{ 0 };      // 실생산량
-    double      avgProdTimeMin{ 0.0 };    // 단위당 평균 생산시간 (분)
-    double      totalProdTimeMin{ 0.0 };  // 총생산시간 (분)
+    int         requiredAmount{ 0 };
+    double      avgProdTimeMin{ 0.0 };
+    double      totalProdTimeMin{ 0.0 };
     std::string startedAt;                // 큐 선두 진입 시각, 대기 중이면 ""
     int         queuePosition{ 0 };       // 0 = 생산 중, 1+ = 대기
 

@@ -7,8 +7,6 @@
 
 namespace fs = std::filesystem;
 
-// ─── Sample JSON RoundTrip ────────────────────────────────────────────────────
-
 TEST(Sample_JsonRoundTrip, AllFields) {
     Sample s;
     s.id                = 1;
@@ -19,8 +17,6 @@ TEST(Sample_JsonRoundTrip, AllFields) {
 
     EXPECT_EQ(s, Sample::fromJson(s.toJson()));
 }
-
-// ─── Order JSON RoundTrip ─────────────────────────────────────────────────────
 
 TEST(Order_JsonRoundTrip, AllFields) {
     Order o;
@@ -42,8 +38,6 @@ TEST(Order_JsonRoundTrip, AllStatuses) {
     for (auto s : statuses)
         EXPECT_EQ(Order::fromString(Order::toString(s)), s);
 }
-
-// ─── ProductionJob JSON RoundTrip ─────────────────────────────────────────────
 
 TEST(ProductionJob_JsonRoundTrip, AllFields) {
     ProductionJob j;
@@ -72,8 +66,6 @@ TEST(ProductionJob_JsonRoundTrip, EmptyStartedAt) {
 
     EXPECT_EQ(j, ProductionJob::fromJson(j.toJson()));
 }
-
-// ─── JsonRepository ───────────────────────────────────────────────────────────
 
 class JsonRepositoryTest : public ::testing::Test {
 protected:
