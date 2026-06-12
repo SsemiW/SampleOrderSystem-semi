@@ -6,7 +6,7 @@ void SampleView::showSampleMenu() {
     std::cout << "\n=== 시료 관리 ===\n"
               << "1. 시료 등록\n"
               << "2. 전체 조회\n"
-              << "3. 이름 검색\n"
+              << "3. 검색 (이름/ID)\n"
               << "0. 돌아가기\n"
               << "> ";
 }
@@ -56,7 +56,7 @@ Sample SampleView::promptNewSample() {
 
 std::string SampleView::promptSearchKeyword() {
     std::string kw;
-    std::cout << "검색어: ";
+    std::cout << "검색어 (이름 또는 ID): ";
     std::getline(std::cin, kw);
     return kw;
 }

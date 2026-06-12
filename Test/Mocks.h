@@ -8,6 +8,12 @@
 #include "View/IShipmentView.h"
 #include "View/IProductionView.h"
 #include "View/IMonitorView.h"
+#include "View/IMenuView.h"
+#include "Controller/ISampleController.h"
+#include "Controller/IOrderController.h"
+#include "Controller/IProductionController.h"
+#include "Controller/IShipmentController.h"
+#include "Controller/IMonitorController.h"
 
 class MockSampleModel : public ISampleModel {
 public:
@@ -76,4 +82,37 @@ class MockProductionView : public IProductionView {
 public:
     MOCK_METHOD(void, render,               (const std::optional<ProductionJob>&, int, const std::vector<ProductionJob>&), (override));
     MOCK_METHOD(bool, isCompleteRequested,  (),                                                                             (const, override));
+};
+
+class MockMenuView : public IMenuView {
+public:
+    MOCK_METHOD(void, showMainMenu, (const MenuStats& stats),    (override));
+    MOCK_METHOD(int,  getMenuChoice,(),                          (override));
+    MOCK_METHOD(void, showMessage,  (const std::string& msg),   (override));
+};
+
+class MockSampleController : public ISampleController {
+public:
+    MOCK_METHOD(void, run, (), (override));
+};
+
+class MockOrderController : public IOrderController {
+public:
+    MOCK_METHOD(void, runReserve,  (), (override));
+    MOCK_METHOD(void, runApproval, (), (override));
+};
+
+class MockProductionController : public IProductionController {
+public:
+    MOCK_METHOD(void, run, (), (override));
+};
+
+class MockShipmentController : public IShipmentController {
+public:
+    MOCK_METHOD(void, run, (), (override));
+};
+
+class MockMonitorController : public IMonitorController {
+public:
+    MOCK_METHOD(void, run, (), (override));
 };
