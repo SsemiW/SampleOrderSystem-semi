@@ -86,12 +86,9 @@ public:
 
 class MockMenuView : public IMenuView {
 public:
-    MOCK_METHOD(int,  selectRole,               (),                       (override));
-    MOCK_METHOD(int,  getMenuChoice,            (),                       (override));
-    MOCK_METHOD(void, showCustomerMenu,         (),                       (override));
-    MOCK_METHOD(void, showOrderManagerMenu,     (),                       (override));
-    MOCK_METHOD(void, showProductionManagerMenu,(),                       (override));
-    MOCK_METHOD(void, showMessage,              (const std::string& msg), (override));
+    MOCK_METHOD(void, showMainMenu, (const MenuStats& stats),    (override));
+    MOCK_METHOD(int,  getMenuChoice,(),                          (override));
+    MOCK_METHOD(void, showMessage,  (const std::string& msg),   (override));
 };
 
 class MockSampleController : public ISampleController {
