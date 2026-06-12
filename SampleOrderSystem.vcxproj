@@ -135,8 +135,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Controller\SampleController.cpp" />
     <ClCompile Include="Core\JsonParser.cpp" />
     <ClCompile Include="Core\JsonSerializer.cpp" />
+    <ClCompile Include="Model\SampleModel.cpp" />
+    <ClCompile Include="View\SampleView.cpp" />
     <ClCompile Include="Test\CoreTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)'=='Release'">true</ExcludedFromBuild>
     </ClCompile>
@@ -150,11 +153,16 @@
     <ClInclude Include="Core\JsonParser.h" />
     <ClInclude Include="Core\JsonSerializer.h" />
     <ClInclude Include="Core\JsonValue.h" />
+    <ClInclude Include="Controller\SampleController.h" />
+    <ClInclude Include="Model\ISampleModel.h" />
     <ClInclude Include="Model\Order.h" />
     <ClInclude Include="Model\ProductionJob.h" />
     <ClInclude Include="Model\Sample.h" />
+    <ClInclude Include="Model\SampleModel.h" />
     <ClInclude Include="Repository\JsonRepository.h" />
     <ClInclude Include="Repository\IRepository.h" />
+    <ClInclude Include="View\ISampleView.h" />
+    <ClInclude Include="View\SampleView.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
