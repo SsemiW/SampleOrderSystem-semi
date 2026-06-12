@@ -5,6 +5,7 @@
 #include "Model/IProductionModel.h"
 #include "View/ISampleView.h"
 #include "View/IOrderView.h"
+#include "View/IProductionView.h"
 #include "View/IMonitorView.h"
 
 class MockSampleModel : public ISampleModel {
@@ -60,4 +61,10 @@ public:
     MOCK_METHOD(int,                          currentProducedAmount, (),                   (const, override));
     MOCK_METHOD(bool,                         isCurrentComplete,     (),                   (const, override));
     MOCK_METHOD(ProductionJob,                dequeue,               (),                   (override));
+};
+
+class MockProductionView : public IProductionView {
+public:
+    MOCK_METHOD(void, render,               (const std::optional<ProductionJob>&, int, const std::vector<ProductionJob>&), (override));
+    MOCK_METHOD(bool, isCompleteRequested,  (),                                                                             (const, override));
 };
