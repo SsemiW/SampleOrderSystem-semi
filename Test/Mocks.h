@@ -6,6 +6,8 @@
 #include "View/ISampleView.h"
 #include "View/IOrderView.h"
 #include "View/IShipmentView.h"
+#include "View/IProductionView.h"
+#include "View/IMonitorView.h"
 
 class MockSampleModel : public ISampleModel {
 public:
@@ -54,6 +56,12 @@ public:
     MOCK_METHOD(void,    showMessage,         (const std::string& msg),           (override));
 };
 
+class MockMonitorView : public IMonitorView {
+public:
+    MOCK_METHOD(void, render,       (const std::vector<Order>& orders, const std::vector<Sample>& samples), (override));
+    MOCK_METHOD(void, waitKeyPress, (),                                                                     (override));
+};
+
 class MockProductionModel : public IProductionModel {
 public:
     MOCK_METHOD(void,                         enqueue,               (ProductionJob job),  (override));
@@ -62,4 +70,10 @@ public:
     MOCK_METHOD(int,                          currentProducedAmount, (),                   (const, override));
     MOCK_METHOD(bool,                         isCurrentComplete,     (),                   (const, override));
     MOCK_METHOD(ProductionJob,                dequeue,               (),                   (override));
+};
+
+class MockProductionView : public IProductionView {
+public:
+    MOCK_METHOD(void, render,               (const std::optional<ProductionJob>&, int, const std::vector<ProductionJob>&), (override));
+    MOCK_METHOD(bool, isCompleteRequested,  (),                                                                             (const, override));
 };

@@ -30,7 +30,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Controller\MonitorController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
     <ClCompile Include="Controller\OrderController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Controller\ProductionController.cpp">
       <Filter>Controller</Filter>
     </ClCompile>
     <ClCompile Include="Controller\SampleController.cpp">
@@ -45,10 +51,19 @@
     <ClCompile Include="Model\OrderModel.cpp">
       <Filter>Model</Filter>
     </ClCompile>
+    <ClCompile Include="Model\ProductionModel.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
     <ClCompile Include="Model\SampleModel.cpp">
       <Filter>Model</Filter>
     </ClCompile>
+    <ClCompile Include="View\MonitorView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
     <ClCompile Include="View\OrderView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="View\ProductionView.cpp">
       <Filter>View</Filter>
     </ClCompile>
     <ClCompile Include="View\SampleView.cpp">
@@ -57,10 +72,16 @@
     <ClCompile Include="Test\CoreTest.cpp">
       <Filter>Test</Filter>
     </ClCompile>
+    <ClCompile Include="Test\MonitorTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
     <ClCompile Include="Test\OrderTest.cpp">
       <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\RepositoryTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test\ProductionTest.cpp">
       <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\SampleTest.cpp">
@@ -87,7 +108,13 @@
     <ClInclude Include="Repository\JsonRepository.h">
       <Filter>Repository</Filter>
     </ClInclude>
+    <ClInclude Include="Controller\MonitorController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
     <ClInclude Include="Controller\OrderController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller\ProductionController.h">
       <Filter>Controller</Filter>
     </ClInclude>
     <ClInclude Include="Controller\SampleController.h">
@@ -102,6 +129,9 @@
     <ClInclude Include="Model\ISampleModel.h">
       <Filter>Model</Filter>
     </ClInclude>
+    <ClInclude Include="Model\ProductionModel.h">
+      <Filter>Model</Filter>
+    </ClInclude>
     <ClInclude Include="Model\Sample.h">
       <Filter>Model</Filter>
     </ClInclude>
@@ -114,13 +144,25 @@
     <ClInclude Include="Model\ProductionJob.h">
       <Filter>Model</Filter>
     </ClInclude>
+    <ClInclude Include="View\IMonitorView.h">
+      <Filter>View</Filter>
+    </ClInclude>
     <ClInclude Include="View\IOrderView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="View\IProductionView.h">
       <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="View\ISampleView.h">
       <Filter>View</Filter>
     </ClInclude>
+    <ClInclude Include="View\MonitorView.h">
+      <Filter>View</Filter>
+    </ClInclude>
     <ClInclude Include="View\OrderView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="View\ProductionView.h">
       <Filter>View</Filter>
     </ClInclude>
     <ClInclude Include="View\SampleView.h">
