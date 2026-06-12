@@ -135,6 +135,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Controller\MonitorController.cpp" />
     <ClCompile Include="Controller\OrderController.cpp" />
     <ClCompile Include="Controller\ProductionController.cpp" />
     <ClCompile Include="Controller\SampleController.cpp" />
@@ -143,6 +144,7 @@
     <ClCompile Include="Model\OrderModel.cpp" />
     <ClCompile Include="Model\ProductionModel.cpp" />
     <ClCompile Include="Model\SampleModel.cpp" />
+    <ClCompile Include="View\MonitorView.cpp" />
     <ClCompile Include="View\OrderView.cpp" />
     <ClCompile Include="View\ProductionView.cpp" />
     <ClCompile Include="View\SampleView.cpp" />
@@ -150,6 +152,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)'=='Release'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Test\RepositoryTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)'=='Release'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Test\MonitorTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)'=='Release'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Test\OrderTest.cpp">
@@ -168,6 +173,7 @@
     <ClInclude Include="Core\JsonParser.h" />
     <ClInclude Include="Core\JsonSerializer.h" />
     <ClInclude Include="Core\JsonValue.h" />
+    <ClInclude Include="Controller\MonitorController.h" />
     <ClInclude Include="Controller\OrderController.h" />
     <ClInclude Include="Controller\ProductionController.h" />
     <ClInclude Include="Controller\SampleController.h" />
@@ -181,9 +187,11 @@
     <ClInclude Include="Model\SampleModel.h" />
     <ClInclude Include="Repository\JsonRepository.h" />
     <ClInclude Include="Repository\IRepository.h" />
+    <ClInclude Include="View\IMonitorView.h" />
     <ClInclude Include="View\IOrderView.h" />
     <ClInclude Include="View\IProductionView.h" />
     <ClInclude Include="View\ISampleView.h" />
+    <ClInclude Include="View\MonitorView.h" />
     <ClInclude Include="View\OrderView.h" />
     <ClInclude Include="View\ProductionView.h" />
     <ClInclude Include="View\SampleView.h" />
