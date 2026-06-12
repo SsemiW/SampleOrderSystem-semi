@@ -57,5 +57,17 @@
     <ClInclude Include="Repository\IRepository.h">
       <Filter>Repository</Filter>
     </ClInclude>
+    <ClInclude Include="Repository\JsonRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\Sample.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\Order.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ProductionJob.h">
+      <Filter>Model</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
