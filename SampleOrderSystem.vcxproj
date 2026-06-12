@@ -137,12 +137,14 @@
   <ItemGroup>
     <ClCompile Include="Controller\OrderController.cpp" />
     <ClCompile Include="Controller\SampleController.cpp" />
+    <ClCompile Include="Controller\ShipmentController.cpp" />
     <ClCompile Include="Core\JsonParser.cpp" />
     <ClCompile Include="Core\JsonSerializer.cpp" />
     <ClCompile Include="Model\OrderModel.cpp" />
     <ClCompile Include="Model\SampleModel.cpp" />
     <ClCompile Include="View\OrderView.cpp" />
     <ClCompile Include="View\SampleView.cpp" />
+    <ClCompile Include="View\ShipmentView.cpp" />
     <ClCompile Include="Test\CoreTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)'=='Release'">true</ExcludedFromBuild>
     </ClCompile>
@@ -164,6 +166,7 @@
     <ClInclude Include="Core\JsonValue.h" />
     <ClInclude Include="Controller\OrderController.h" />
     <ClInclude Include="Controller\SampleController.h" />
+    <ClInclude Include="Controller\ShipmentController.h" />
     <ClInclude Include="Model\IOrderModel.h" />
     <ClInclude Include="Model\IProductionModel.h" />
     <ClInclude Include="Model\ISampleModel.h" />
@@ -175,8 +178,10 @@
     <ClInclude Include="Repository\IRepository.h" />
     <ClInclude Include="View\IOrderView.h" />
     <ClInclude Include="View\ISampleView.h" />
+    <ClInclude Include="View\IShipmentView.h" />
     <ClInclude Include="View\OrderView.h" />
     <ClInclude Include="View\SampleView.h" />
+    <ClInclude Include="View\ShipmentView.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
