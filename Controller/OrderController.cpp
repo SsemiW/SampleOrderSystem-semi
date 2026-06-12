@@ -21,15 +21,18 @@ OrderController::OrderController(IOrderModel& orderModel, ISampleModel& sampleMo
       productionModel_(productionModel), view_(view) {}
 
 void OrderController::runReserve() {
-    Order o = view_.promptNewOrder();
-    if (!sampleModel_.findById(o.sampleId)) {
-        view_.showMessage("존재하지 않는 시료 ID입니다.");
+    while (true) {
+        Order o = view_.promptNewOrder();
+        if (!sampleModel_.findById(o.sampleId)) {
+            view_.showMessage("존재하지 않는 시료 ID입니다.");
+            continue;
+        }
+        o.status    = OrderStatus::Reserved;
+        o.createdAt = currentTimeString();
+        orderModel_.add(o);
+        view_.showMessage("주문이 접수되었습니다.");
         return;
     }
-    o.status    = OrderStatus::Reserved;
-    o.createdAt = currentTimeString();
-    orderModel_.add(o);
-    view_.showMessage("주문이 접수되었습니다.");
 }
 
 void OrderController::runApproval() {
@@ -91,6 +94,6 @@ void OrderController::handleReject() {
         view_.showMessage("유효하지 않은 주문 ID입니다.");
         return;
     }
-    orderModel_.updateStatus(id, OrderStatus::Rejected);
+    orderModel_.remove(id);
     view_.showMessage("주문이 거절되었습니다.");
 }
