@@ -103,14 +103,18 @@ protected:
 };
 
 TEST_F(OrderControllerTest, Reserve_InvalidSample) {
-    Order o;
-    o.sampleId     = 999;
-    o.customerName = "Test";
-    o.quantity     = 10;
+    // 잘못된 시료 ID → 에러 메시지 후 재시도 → 올바른 ID로 성공
+    Order bad;  bad.sampleId  = 999; bad.customerName = "Test"; bad.quantity = 10;
+    Order good; good.sampleId = 1;   good.customerName = "Test"; good.quantity = 10;
 
-    EXPECT_CALL(view, promptNewOrder()).WillOnce(Return(o));
+    EXPECT_CALL(view, promptNewOrder())
+        .WillOnce(Return(bad))
+        .WillOnce(Return(good));
     EXPECT_CALL(sampleModel, findById(999L)).WillOnce(Return(std::nullopt));
+    EXPECT_CALL(sampleModel, findById(1L)).WillOnce(Return(makeSample(1)));
     EXPECT_CALL(view, showMessage("존재하지 않는 시료 ID입니다.")).Times(1);
+    EXPECT_CALL(orderModel, add(_)).Times(1);
+    EXPECT_CALL(view, showMessage("주문이 접수되었습니다.")).Times(1);
 
     OrderController ctrl(orderModel, sampleModel, prodModel, view);
     ctrl.runReserve();
@@ -219,7 +223,7 @@ TEST_F(OrderControllerTest, Reject) {
         .WillOnce(Return(0));
     EXPECT_CALL(view, promptOrderId()).WillOnce(Return(1L));
     EXPECT_CALL(orderModel, findById(1L)).WillOnce(Return(reserved));
-    EXPECT_CALL(orderModel, updateStatus(1L, OrderStatus::Rejected)).Times(1);
+    EXPECT_CALL(orderModel, remove(1L)).Times(1);
     EXPECT_CALL(view, showMessage("주문이 거절되었습니다.")).Times(1);
 
     OrderController ctrl(orderModel, sampleModel, prodModel, view);
