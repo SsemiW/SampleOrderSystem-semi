@@ -135,12 +135,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Controller\MonitorController.cpp" />
     <ClCompile Include="Controller\OrderController.cpp" />
     <ClCompile Include="Controller\SampleController.cpp" />
     <ClCompile Include="Core\JsonParser.cpp" />
     <ClCompile Include="Core\JsonSerializer.cpp" />
     <ClCompile Include="Model\OrderModel.cpp" />
     <ClCompile Include="Model\SampleModel.cpp" />
+    <ClCompile Include="View\MonitorView.cpp" />
     <ClCompile Include="View\OrderView.cpp" />
     <ClCompile Include="View\SampleView.cpp" />
     <ClCompile Include="Test\CoreTest.cpp">
@@ -162,6 +164,7 @@
     <ClInclude Include="Core\JsonParser.h" />
     <ClInclude Include="Core\JsonSerializer.h" />
     <ClInclude Include="Core\JsonValue.h" />
+    <ClInclude Include="Controller\MonitorController.h" />
     <ClInclude Include="Controller\OrderController.h" />
     <ClInclude Include="Controller\SampleController.h" />
     <ClInclude Include="Model\IOrderModel.h" />
@@ -173,8 +176,10 @@
     <ClInclude Include="Model\SampleModel.h" />
     <ClInclude Include="Repository\JsonRepository.h" />
     <ClInclude Include="Repository\IRepository.h" />
+    <ClInclude Include="View\IMonitorView.h" />
     <ClInclude Include="View\IOrderView.h" />
     <ClInclude Include="View\ISampleView.h" />
+    <ClInclude Include="View\MonitorView.h" />
     <ClInclude Include="View\OrderView.h" />
     <ClInclude Include="View\SampleView.h" />
   </ItemGroup>
