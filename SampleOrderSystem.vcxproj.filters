@@ -51,6 +51,9 @@
     <ClCompile Include="Test\RepositoryTest.cpp">
       <Filter>Test</Filter>
     </ClCompile>
+    <ClCompile Include="Test\SampleTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
