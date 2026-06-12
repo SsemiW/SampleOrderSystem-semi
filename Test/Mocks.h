@@ -5,6 +5,7 @@
 #include "Model/IProductionModel.h"
 #include "View/ISampleView.h"
 #include "View/IOrderView.h"
+#include "View/IShipmentView.h"
 #include "View/IProductionView.h"
 #include "View/IMonitorView.h"
 
@@ -45,6 +46,14 @@ public:
     MOCK_METHOD(int64_t, promptOrderId,      (),                                                    (override));
     MOCK_METHOD(void,    showApprovalResult, (const Order& order, const std::string& reason),      (override));
     MOCK_METHOD(void,    showMessage,        (const std::string& msg),                             (override));
+};
+
+class MockShipmentView : public IShipmentView {
+public:
+    MOCK_METHOD(void,    showConfirmedOrders, (const std::vector<Order>& orders), (override));
+    MOCK_METHOD(int64_t, promptOrderId,       (),                                 (override));
+    MOCK_METHOD(void,    showReleaseResult,   (const Order& order),               (override));
+    MOCK_METHOD(void,    showMessage,         (const std::string& msg),           (override));
 };
 
 class MockMonitorView : public IMonitorView {
