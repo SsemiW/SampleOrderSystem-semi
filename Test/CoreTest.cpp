@@ -1,4 +1,4 @@
-#include <gtest/gtest.h>
+﻿#include <gtest/gtest.h>
 #include "Core/JsonParser.h"
 #include "Core/JsonSerializer.h"
 #include <stdexcept>
@@ -36,10 +36,8 @@ bool jsonEq(const JsonValue& a, const JsonValue& b) {
     }
     return false;
 }
+}
 
-} // namespace
-
-// ─── JsonParser_Primitives ────────────────────────────────────────────────
 
 TEST(JsonParser_Primitives, Null) {
     auto v = JsonParser::parse("null");
@@ -91,7 +89,6 @@ TEST(JsonParser_Primitives, InvalidInput_Throws) {
     EXPECT_THROW(JsonParser::parse("???"), std::runtime_error);
 }
 
-// ─── JsonParser_Array ─────────────────────────────────────────────────────
 
 TEST(JsonParser_Array, Empty) {
     auto v = JsonParser::parse("[]");
@@ -130,7 +127,6 @@ TEST(JsonParser_Array, Nested) {
     EXPECT_EQ(v[1][0].asInteger(), 3);
 }
 
-// ─── JsonParser_Object ────────────────────────────────────────────────────
 
 TEST(JsonParser_Object, Empty) {
     auto v = JsonParser::parse("{}");
@@ -162,7 +158,6 @@ TEST(JsonParser_Object, ObjectInArray) {
     EXPECT_EQ(v[1].at("id").asInteger(), 2);
 }
 
-// ─── JsonSerializer_RoundTrip ─────────────────────────────────────────────
 
 TEST(JsonSerializer_RoundTrip, Null) {
     JsonValue v;
@@ -211,7 +206,6 @@ TEST(JsonSerializer_RoundTrip, NestedObject) {
     EXPECT_TRUE(jsonEq(v, JsonParser::parse(JsonSerializer::serialize(v))));
 }
 
-// ─── JsonSerializer_PrettyPrint ───────────────────────────────────────────
 
 TEST(JsonSerializer_PrettyPrint, ContainsNewlines) {
     auto v = JsonParser::parse("{\"a\": 1}");
@@ -237,9 +231,3 @@ TEST(JsonSerializer_PrettyPrint, ArrayPretty) {
     EXPECT_NE(out.find('\n'), std::string::npos);
 }
 
-// ─── main ─────────────────────────────────────────────────────────────────
-
-int main(int argc, char** argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}

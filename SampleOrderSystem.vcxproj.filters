@@ -36,6 +36,9 @@
     <ClCompile Include="Core\JsonSerializer.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="Test\CoreTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
